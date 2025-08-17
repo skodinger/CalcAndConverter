@@ -1,0 +1,38 @@
+<resources>
+    <!-- App -->
+    <string name="app_name">CalcAndConverter</string>
+
+    <!-- Calculator -->
+    <string name="result">0</string>
+    <string name="error">Error</string>
+    <string name="enter_valid_number">Enter a valid number</string>
+
+    <!-- Digits -->
+    <string name="digit_0">0</string>
+    <string name="digit_1">1</string>
+    <string name="digit_2">2</string>
+    <string name="digit_3">3</string>
+    <string name="digit_4">4</string>
+    <string name="digit_5">5</string>
+    <string name="digit_6">6</string>
+    <string name="digit_7">7</string>
+    <string name="digit_8">8</string>
+    <string name="digit_9">9</string>
+
+    <!-- Operators -->
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="multiply">×</string>
+    <string name="divide">÷</string>
+    <string name="dot">.</string>
+    <string name="equal">=</string>
+    <string name="clear">C</string>
+
+
+    <!-- Conversion -->
+    <string name="converter_label">Unit Converter</string>
+    <string name="convert">Convert</string>
+    <string name="inches_to_cm">Inches to Centimeters</string>
+    <string name="cm_to_inches">Centimeters to Inches</string>
+    <string name="conversion_result">Result: %1$s</string>
+</resources>
