@@ -94,23 +94,24 @@ class MainActivity : AppCompatActivity() {
         btnConvert.setOnClickListener {
             val value = etInput.text.toString().toDoubleOrNull()
             if (value != null) {
-                val result = when (spinner.selectedItem.toString()) {
-                    getString(R.string.inches_to_cm) -> value * 2.54
-                    getString(R.string.cm_to_inches) -> value * 0.393701
-                    getString(R.string.pounds_to_kg) -> value * 0.453592
-                    getString(R.string.kg_to_pounds) -> value * 2.20462
-                    getString(R.string.fahrenheit_to_celsius) -> (value - 32) * 5/9
-                    getString(R.string.celsius_to_fahrenheit) -> (value * 9/5) + 32
-                    else -> 0.0
+                val (result, unit) = when (spinner.selectedItem.toString()) {
+                    getString(R.string.inches_to_cm) -> Pair(value * 2.54, getString(R.string.unit_cm))
+                    getString(R.string.cm_to_inches) -> Pair(value * 0.393701, getString(R.string.unit_inches))
+                    getString(R.string.pounds_to_kg) -> Pair(value * 0.453592, getString(R.string.unit_kg))
+                    getString(R.string.kg_to_pounds) -> Pair(value * 2.20462, getString(R.string.unit_lbs))
+                    getString(R.string.fahrenheit_to_celsius) -> Pair((value - 32) * 5/9, getString(R.string.unit_celsius))
+                    getString(R.string.celsius_to_fahrenheit) -> Pair((value * 9/5) + 32, getString(R.string.unit_fahrenheit))
+                    else -> Pair(0.0, "")
                 }
-                // For calculator errors
-                tvResult.text = getString(R.string.error)
+                
+                
 
 // For invalid conversion input
                 tvConversionResult.text = getString(R.string.enter_valid_number)
 
 // For valid conversion
-                tvConversionResult.text = getString(R.string.conversion_result, result.toString())
+                val formattedResult = "%.2f %s".format(result, unit)
+                tvConversionResult.text = getString(R.string.conversion_result, formattedResult)
 
             } else {
                 tvConversionResult.text = getString(R.string.enter_valid_number)
