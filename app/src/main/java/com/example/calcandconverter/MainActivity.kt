@@ -79,7 +79,11 @@ class MainActivity : AppCompatActivity() {
         // Dropdown options
         val conversions = arrayOf(
             getString(R.string.inches_to_cm),
-            getString(R.string.cm_to_inches)
+            getString(R.string.cm_to_inches),
+            getString(R.string.pounds_to_kg),
+            getString(R.string.kg_to_pounds),
+            getString(R.string.fahrenheit_to_celsius),
+            getString(R.string.celsius_to_fahrenheit),
         )
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, conversions)
         spinner.adapter = adapter
@@ -91,6 +95,10 @@ class MainActivity : AppCompatActivity() {
                 val result = when (spinner.selectedItem.toString()) {
                     getString(R.string.inches_to_cm) -> value * 2.54
                     getString(R.string.cm_to_inches) -> value * 0.393701
+                    getString(R.string.pounds_to_kg) -> value * 0.453592
+                    getString(R.string.kg_to_pounds) -> value * 2.20462
+                    getString(R.string.fahrenheit_to_celsius) -> (value - 32) * 5/9
+                    getString(R.string.celsius_to_fahrenheit) -> (value * 9/5) + 32
                     else -> 0.0
                 }
                 // For calculator errors

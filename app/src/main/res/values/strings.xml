@@ -37,5 +37,9 @@
     <string name="convert">Convert</string>
     <string name="inches_to_cm">Inches to Centimeters</string>
     <string name="cm_to_inches">Centimeters to Inches</string>
+    <string name="pounds_to_kg">Pounds to Kilograms</string>
+    <string name="kg_to_pounds">Kilograms to Pounds</string>
+    <string name="fahrenheit_to_celsius">Fahrenheit to Celsius</string>
+    <string name="celsius_to_fahrenheit">Celsius to Fahrenheit</string>
     <string name="conversion_result">Result: %1$s</string>
 </resources>
