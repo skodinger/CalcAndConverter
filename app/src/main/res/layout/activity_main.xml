@@ -30,43 +30,39 @@
             android:rowCount="5"
             android:layout_marginTop="16dp">
 
-            <Button
+            <Button style="@style/CalculatorButton.Operator"
                 android:id="@+id/btnClear"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:text="@string/clear"
-                android:textSize="18sp" />
+                android:text="@string/clear" />
+            <Button style="@style/CalculatorButton.Operator"
+                android:id="@+id/btnDivide"
+                android:text="@string/divide" />
+            <Button style="@style/CalculatorButton.Operator"
+                android:id="@+id/btnMultiply"
+                android:text="@string/multiply" />
+            <Button style="@style/CalculatorButton.Operator"
+                android:id="@+id/btnBack"
+                android:text="@string/backspace" />
 
+            <Button style="@style/CalculatorButton" android:id="@+id/btn7" android:text="@string/digit_7"/>
+            <Button style="@style/CalculatorButton" android:id="@+id/btn8" android:text="@string/digit_8"/>
+            <Button style="@style/CalculatorButton" android:id="@+id/btn9" android:text="@string/digit_9"/>
+            <Button style="@style/CalculatorButton.Operator" android:id="@+id/btnMinus" android:text="@string/minus"/>
 
-            <!-- Row 1 -->
-            <Button style="@style/CalcButton" android:id="@+id/btn7" android:text="@string/digit_7"/>
-            <Button style="@style/CalcButton" android:id="@+id/btn8" android:text="@string/digit_8"/>
-            <Button style="@style/CalcButton" android:id="@+id/btn9" android:text="@string/digit_9"/>
-            <Button style="@style/CalcButton" android:id="@+id/btnDivide" android:text="@string/divide"/>
+            <Button style="@style/CalculatorButton" android:id="@+id/btn4" android:text="@string/digit_4"/>
+            <Button style="@style/CalculatorButton" android:id="@+id/btn5" android:text="@string/digit_5"/>
+            <Button style="@style/CalculatorButton" android:id="@+id/btn6" android:text="@string/digit_6"/>
+            <Button style="@style/CalculatorButton.Operator" android:id="@+id/btnPlus" android:text="@string/plus"/>
 
-            <!-- Row 2 -->
-            <Button style="@style/CalcButton" android:id="@+id/btn4" android:text="@string/digit_4"/>
-            <Button style="@style/CalcButton" android:id="@+id/btn5" android:text="@string/digit_5"/>
-            <Button style="@style/CalcButton" android:id="@+id/btn6" android:text="@string/digit_6"/>
-            <Button style="@style/CalcButton" android:id="@+id/btnMultiply" android:text="@string/multiply"/>
+            <Button style="@style/CalculatorButton" android:id="@+id/btn1" android:text="@string/digit_1"/>
+            <Button style="@style/CalculatorButton" android:id="@+id/btn2" android:text="@string/digit_2"/>
+            <Button style="@style/CalculatorButton" android:id="@+id/btn3" android:text="@string/digit_3"/>
+            <Button style="@style/CalculatorButton.Equals" android:id="@+id/btnEqual" android:text="@string/equal"/>
 
-            <!-- Row 3 -->
-            <Button style="@style/CalcButton" android:id="@+id/btn1" android:text="@string/digit_1"/>
-            <Button style="@style/CalcButton" android:id="@+id/btn2" android:text="@string/digit_2"/>
-            <Button style="@style/CalcButton" android:id="@+id/btn3" android:text="@string/digit_3"/>
-            <Button style="@style/CalcButton" android:id="@+id/btnMinus" android:text="@string/minus"/>
+            <Button style="@style/CalculatorButton" android:id="@+id/btn0" android:text="@string/digit_0"/>
+            <Button style="@style/CalculatorButton.Operator" android:id="@+id/btnDot" android:text="@string/dot"/>
+            <Button style="@style/CalculatorButton.Operator" android:id="@+id/btnPercent" android:text="@string/percent"/>
+            <Button style="@style/CalculatorButton.Equals" android:id="@+id/btnEmpty" android:visibility="invisible"/>
 
-            <!-- Row 4 -->
-            <Button
-                android:id="@+id/btn0"
-                style="@style/CalcButton"
-                android:text="@string/digit_0"
-                tools:ignore="DuplicateSpeakableTextCheck" />
-            <Button style="@style/CalcButton" android:id="@+id/btnDot" android:text="@string/dot"/>
-            <Button style="@style/CalcButton" android:id="@+id/btnEqual" android:text="@string/equal"/>
-            <Button style="@style/CalcButton" android:id="@+id/btnPlus" android:text="@string/plus"/>
         </GridLayout>
 
         <!-- Conversion Section -->

@@ -27,6 +27,9 @@
     <string name="dot">.</string>
     <string name="equal">=</string>
     <string name="clear">C</string>
+    <string name="backspace">del</string>
+    <string name="del">del</string>
+    <string name="percent">%</string>
 
 
     <!-- Conversion -->

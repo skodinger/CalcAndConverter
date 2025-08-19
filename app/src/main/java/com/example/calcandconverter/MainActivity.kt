@@ -51,6 +51,25 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        findViewById<Button>(R.id.btnBack).setOnClickListener {
+            if (input.isNotEmpty()) {
+                input = input.dropLast(1)
+                tvResult.text = input
+            }
+        }
+
+        findViewById<Button>(R.id.btnPercent).setOnClickListener {
+            try {
+                val currentValue = input.toDouble()
+                val result = currentValue / 100.0
+                tvResult.text = result.toString()
+                input = result.toString()
+            } catch (e: Exception) {
+                // Handle cases where the input is not a valid number
+                tvResult.text = "Error"
+            }
+        }
+
         // === CONVERSION FEATURE ===
         val etInput = findViewById<EditText>(R.id.etInput)
         val spinner = findViewById<Spinner>(R.id.spinnerConversion)
