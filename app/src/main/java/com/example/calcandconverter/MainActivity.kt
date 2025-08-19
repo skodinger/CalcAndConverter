@@ -42,9 +42,11 @@ class MainActivity : AppCompatActivity() {
         // Equal button: evaluate expression with Exp4j
         findViewById<Button>(R.id.btnEqual).setOnClickListener {
             try {
-                val result = ExpressionBuilder(input).build().evaluate()
-                tvResult.text = result.toString()
-                input = result.toString()
+                if (input.isNotEmpty()) { // Check if there's input to evaluate
+                    val result = ExpressionBuilder(input).build().evaluate()
+                    tvResult.text = result.toString()
+                    input = result.toString()
+                }
             } catch (e: Exception) {
                 tvResult.text = getString(R.string.error)
                 input = ""
@@ -79,7 +81,11 @@ class MainActivity : AppCompatActivity() {
         // Dropdown options
         val conversions = arrayOf(
             getString(R.string.inches_to_cm),
-            getString(R.string.cm_to_inches)
+            getString(R.string.cm_to_inches),
+            getString(R.string.pounds_to_kg),
+            getString(R.string.kg_to_pounds),
+            getString(R.string.fahrenheit_to_celsius),
+            getString(R.string.celsius_to_fahrenheit),
         )
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, conversions)
         spinner.adapter = adapter
@@ -88,19 +94,24 @@ class MainActivity : AppCompatActivity() {
         btnConvert.setOnClickListener {
             val value = etInput.text.toString().toDoubleOrNull()
             if (value != null) {
-                val result = when (spinner.selectedItem.toString()) {
-                    getString(R.string.inches_to_cm) -> value * 2.54
-                    getString(R.string.cm_to_inches) -> value * 0.393701
-                    else -> 0.0
+                val (result, unit) = when (spinner.selectedItem.toString()) {
+                    getString(R.string.inches_to_cm) -> Pair(value * 2.54, getString(R.string.unit_cm))
+                    getString(R.string.cm_to_inches) -> Pair(value * 0.393701, getString(R.string.unit_inches))
+                    getString(R.string.pounds_to_kg) -> Pair(value * 0.453592, getString(R.string.unit_kg))
+                    getString(R.string.kg_to_pounds) -> Pair(value * 2.20462, getString(R.string.unit_lbs))
+                    getString(R.string.fahrenheit_to_celsius) -> Pair((value - 32) * 5/9, getString(R.string.unit_celsius))
+                    getString(R.string.celsius_to_fahrenheit) -> Pair((value * 9/5) + 32, getString(R.string.unit_fahrenheit))
+                    else -> Pair(0.0, "")
                 }
-                // For calculator errors
-                tvResult.text = getString(R.string.error)
+                
+                
 
 // For invalid conversion input
                 tvConversionResult.text = getString(R.string.enter_valid_number)
 
 // For valid conversion
-                tvConversionResult.text = getString(R.string.conversion_result, result.toString())
+                val formattedResult = "%.2f %s".format(result, unit)
+                tvConversionResult.text = getString(R.string.conversion_result, formattedResult)
 
             } else {
                 tvConversionResult.text = getString(R.string.enter_valid_number)
