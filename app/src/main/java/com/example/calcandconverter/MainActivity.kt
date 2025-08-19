@@ -42,9 +42,11 @@ class MainActivity : AppCompatActivity() {
         // Equal button: evaluate expression with Exp4j
         findViewById<Button>(R.id.btnEqual).setOnClickListener {
             try {
-                val result = ExpressionBuilder(input).build().evaluate()
-                tvResult.text = result.toString()
-                input = result.toString()
+                if (input.isNotEmpty()) { // Check if there's input to evaluate
+                    val result = ExpressionBuilder(input).build().evaluate()
+                    tvResult.text = result.toString()
+                    input = result.toString()
+                }
             } catch (e: Exception) {
                 tvResult.text = getString(R.string.error)
                 input = ""
