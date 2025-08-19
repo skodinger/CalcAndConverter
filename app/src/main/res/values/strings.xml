@@ -40,7 +40,14 @@
     <string name="pounds_to_kg">Pounds to Kilograms</string>
     <string name="kg_to_pounds">Kilograms to Pounds</string>
     <string name="fahrenheit_to_celsius">Fahrenheit to Celsius</string>
-    <string name="celsius_to_fahrenheit">Celsius to Fahrenheit</string>
+    <string name="celsius_to_fahrenheit">Celsius to Fahrenheit</string>    <string name="miles_to_km">Miles to Kilometres</string>
+    <string name="km_to_miles">Kilometres to Miles</string>
+    <string name="litres_to_millilitres">Litres to Millilitres</string>
+    <string name="millilitres_to_litres">Millilitres to Litres</string>
+    <string name="unit_km">km</string>
+    <string name="unit_miles">miles</string>
+    <string name="unit_litres">litres</string>
+    <string name="unit_millilitres">ml</string>
     <string name="conversion_result">Result: %1$s</string>
 
     <!-- SI Units -->

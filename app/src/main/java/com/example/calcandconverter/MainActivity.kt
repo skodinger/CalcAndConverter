@@ -86,6 +86,10 @@ class MainActivity : AppCompatActivity() {
             getString(R.string.kg_to_pounds),
             getString(R.string.fahrenheit_to_celsius),
             getString(R.string.celsius_to_fahrenheit),
+            getString(R.string.miles_to_km),
+            getString(R.string.km_to_miles),
+            getString(R.string.litres_to_millilitres),
+            getString(R.string.millilitres_to_litres),
         )
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, conversions)
         spinner.adapter = adapter
@@ -101,6 +105,10 @@ class MainActivity : AppCompatActivity() {
                     getString(R.string.kg_to_pounds) -> Pair(value * 2.20462, getString(R.string.unit_lbs))
                     getString(R.string.fahrenheit_to_celsius) -> Pair((value - 32) * 5/9, getString(R.string.unit_celsius))
                     getString(R.string.celsius_to_fahrenheit) -> Pair((value * 9/5) + 32, getString(R.string.unit_fahrenheit))
+                    getString(R.string.miles_to_km) -> Pair(value * 1.60934, getString(R.string.unit_km))
+                    getString(R.string.km_to_miles) -> Pair(value * 0.621371, getString(R.string.unit_miles))
+                    getString(R.string.litres_to_millilitres) -> Pair(value * 1000, getString(R.string.unit_millilitres))
+                    getString(R.string.millilitres_to_litres) -> Pair(value / 1000, getString(R.string.unit_litres))
                     else -> Pair(0.0, "")
                 }
                 
@@ -112,7 +120,6 @@ class MainActivity : AppCompatActivity() {
 // For valid conversion
                 val formattedResult = "%.2f %s".format(result, unit)
                 tvConversionResult.text = getString(R.string.conversion_result, formattedResult)
-
             } else {
                 tvConversionResult.text = getString(R.string.enter_valid_number)
             }
