@@ -44,15 +44,19 @@
     <string name="km_to_miles">Kilometres to Miles</string>
     <string name="litres_to_millilitres">Litres to Millilitres</string>
     <string name="millilitres_to_litres">Millilitres to Litres</string>
+     <string name="cm_to_feet">Centimeters to Feet</string>
+    <string name="feet_to_cm">Feet to Centimeters</string>
     <string name="unit_km">km</string>
     <string name="unit_miles">miles</string>
     <string name="unit_litres">litres</string>
     <string name="unit_millilitres">ml</string>
     <string name="conversion_result">Result: %1$s</string>
 
+
     <!-- SI Units -->
     <string name="unit_cm">cm</string>
     <string name="unit_inches">inches</string>
+    <string name="unit_feet">ft</string>
     <string name="unit_kg">kg</string>
     <string name="unit_lbs">lbs</string>
     <string name="unit_celsius">°C</string>
