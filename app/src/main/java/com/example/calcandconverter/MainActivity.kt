@@ -90,6 +90,8 @@ class MainActivity : AppCompatActivity() {
             getString(R.string.km_to_miles),
             getString(R.string.litres_to_millilitres),
             getString(R.string.millilitres_to_litres),
+            getString(R.string.cm_to_feet)
+            getString(R.string.feet_to_cm)
         )
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, conversions)
         spinner.adapter = adapter
@@ -109,6 +111,8 @@ class MainActivity : AppCompatActivity() {
                     getString(R.string.km_to_miles) -> Pair(value * 0.621371, getString(R.string.unit_miles))
                     getString(R.string.litres_to_millilitres) -> Pair(value * 1000, getString(R.string.unit_millilitres))
                     getString(R.string.millilitres_to_litres) -> Pair(value / 1000, getString(R.string.unit_litres))
+                    getString(R.string.cm_to_feet) -> Pair(value * 0.0328084, getString(R.string.unit_feet))
+                    getString(R.string.feet_to_cm) -> Pair(value * 30.48, getString(R.string.unit_cm))
                     else -> Pair(0.0, "")
                 }
                 
